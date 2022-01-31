@@ -32,3 +32,5 @@ SM$distance<-distHaversine(SM[,1:2], SM[,4:5])
 SM_distance <-group_by(SM, nameX) %>% 
   slice(which.min(distance))
 
+#export results
+write_csv(SM_distance,here("Output","Distance to river mouth data.csv") )
